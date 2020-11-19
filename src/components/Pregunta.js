@@ -3,7 +3,7 @@ const { Fragment } = require("react");
 const {useState} = require("react");
 
 
-export default function Pregunta({guardarPresupuesto, guardarRestante}) {
+export default function Pregunta({guardarPresupuesto, guardarRestante, actualizarPregunta}) {
 
 //definiendo el state para presupuesto
 const [cantidad, guardadCantidad]= useState(0);
@@ -23,9 +23,10 @@ const agregarPresupuesto = e=>{
         return;
     }
     //si pasa validación
-        guardarError(false)
-        guardarPresupuesto(cantidad)
-        guardarRestante(cantidad)
+        guardarError(false);
+        guardarPresupuesto(cantidad);
+        guardarRestante(cantidad);
+        actualizarPregunta(false);
 
 }
 
